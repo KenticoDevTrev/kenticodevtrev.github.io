@@ -1,0 +1,384 @@
+@Sprites : "/SaP/Media/Design/Sonicandpals-SiteSprites.png";
+
+body {
+    background       : url(/SaP/media/Design/BackgroundTile.png);
+    background-repeat: repeat;
+}
+
+@media all and (max-width: 991px) {
+    .container {
+        max-width: 100% !important;
+        width    : 100% !important;
+    }
+}
+
+header {
+    margin-bottom: 25px;
+
+    nav {
+        margin-bottom: 25px;
+    }
+
+    .SiteBanner {
+        display   : inline-block;
+        height    : 195px;
+        width     : 485px;
+        background: url(@Sprites);
+    }
+}
+
+#ComicZone {
+
+    position: relative;
+
+    .comic-container {
+        min-height: 288px;
+    }
+
+    /* Fade in/out 
+    .comic-transition-enter-active,
+    .comic-transition-exit-active {
+        transition: opacity 500ms;
+    }
+
+    .comic-transition-exit {
+        opacity: 1;
+    }
+
+    .comic-transition-exit-active {
+        opacity: 0;
+    }
+
+    .comic-transition-enter {
+        opacity: 0;
+    }
+
+    .comic-transition-enter-active {
+        opacity: 1;
+    }*/
+
+    /* Basic Slide 
+    .comic-transition-enter-active,
+    .comic-transition-exit-active {
+        transition: 250ms;
+    }
+
+    .comic-transition-exit {
+        position: relative;
+        left: 0;
+    }
+
+    .comic-transition-exit-active {
+        left: 150%;
+    }
+
+    .comic-transition-enter {
+        position: relative;
+        left: -150%;
+    }
+
+    .comic-transition-enter-active {
+        left: 0;
+    }*/
+
+
+    .comic-transition-forward-enter-active,
+    .comic-transition-forward-exit-active {
+        transition: 250ms;
+        position  : relative;
+    }
+
+    .comic-transition-forward-enter {
+        left: 150%;
+
+        &.comic-transition-forward-enter-active {
+            left: 0;
+        }
+    }
+
+    .comic-transition-forward-exit {
+        left: 0;
+
+        &.comic-transition-forward-exit-active {
+            left: -150%;
+        }
+    }
+
+    .comic-transition-backward-enter-active,
+    .comic-transition-backward-exit-active {
+        transition: 250ms;
+        position  : relative;
+    }
+
+    .comic-transition-backward-enter {
+        left: -150%;
+
+        &.comic-transition-backward-enter-active {
+            left: 0;
+        }
+    }
+
+    .comic-transition-backward-exit {
+        left: 0;
+
+        &.comic-transition-backward-exit-active {
+            left: 150%;
+        }
+    }
+
+
+    .comic-transition-fade-enter-active,
+    .comic-transition-fade-exit-active {
+        transition: 250ms;
+        position  : relative;
+    }
+
+    .comic-transition-fade-enter {
+        opacity: 0;
+
+        &.comic-transition-fade-enter-active {
+            opacity: 1;
+        }
+    }
+
+    .comic-transition-fade-exit {
+        opacity: 1;
+
+        &.comic-transition-fade-exit-active {
+            opacity: 0;
+        }
+    }
+
+    .card {
+        width        : auto;
+        display      : inline-block;
+        margin-left  : auto;
+        margin-right : auto;
+        max-width    : 805px;
+        margin-bottom: 15px;
+
+        .card-header {
+            font-style: italic;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        .card-footer,
+        .card-header {
+            padding: 5px;
+        }
+
+    }
+
+    .TrackComic {
+        display   : inline-block;
+        background: url(@Sprites) -88px -195px;
+        width     : 20px;
+        height    : 20px;
+        border    : none;
+        position  : relative;
+        top       : 3px;
+        left      : 2px;
+        outline   : none;
+
+        &.Enabled {
+            background-position-y: -215px;
+        }
+    }
+
+    .comic-share{
+        display   : inline-block;
+        background: url(@Sprites) -67px -195px;
+        width     : 20px;
+        height    : 20px;
+        border    : none;
+        position  : relative;
+        top       : 3px;
+        left      : 2px;
+        outline   : none;
+        &:hover {
+            background-position-y: -215px;
+        }
+    }
+
+    .rating-container {
+        .rating {
+            display     : inline-block;
+            background  : url(@Sprites) -45px -195px;
+            width       : 20px;
+            height      : 20px;
+            border      : none;
+            position    : relative;
+            top         : 5px;
+            outline     : none;
+            cursor      : pointer;
+            margin-right: 2px;
+
+            &.half {
+                background-position-x: -24px;
+            }
+
+            &.full {
+                background-position-x: -1px;
+            }
+
+            &.hovering {
+                background-position-x: -1px;
+                background-position-y: -215px;
+            }
+        }
+
+
+
+        &.voted .rating {
+            background-position-y: -195px !important;
+        }
+    }
+
+
+    .EpisodeNavigation {
+
+        li {
+            margin-left : 0;
+            padding-left: 0;
+            list-style  : none;
+            float       : left;
+
+            a {
+                background: url(@Sprites) 300px 10px;
+                display   : inline-block;
+                margin    : 0 15px;
+                cursor    : pointer;
+
+                &.Nav-First,
+                &.Nav-Previous,
+                &.Nav-Next,
+                &.Nav-Last,
+                &.Nav-ComicSelect {
+                    height               : 50px;
+                    width                : 115px;
+                    background-position-y: 110px;
+                }
+
+                &.Nav-First,
+                &.Nav-Previous,
+                &.Nav-Next,
+                &.Nav-Last {
+                    &:hover {
+                        background-position-y: 57px;
+                    }
+                }
+
+                &.Nav-First {
+                    background-position-x: 0;
+                }
+
+                &.Nav-Previous {
+                    background-position-x: 370px;
+                }
+
+                &.Nav-ComicSelect {
+                    background-position-x: 291px;
+                    background-position-y: 161px;
+                    width                : 135px;
+                    height               : 48px;
+                    position             : relative;
+                    top                  : 2px;
+
+                    &:hover {
+                        background-position-x: 153px;
+                    }
+                }
+
+                &.Nav-Next {
+                    background-position-x: 255px;
+
+                }
+
+                &.Nav-Last {
+                    background-position-x: 140px;
+
+                }
+
+            }
+        }
+    }
+}
+
+.ComicSelect {
+
+    button:focus,
+    button:active {
+        outline: none;
+    }
+
+    label,
+    .form-control {
+        display: inline-block;
+    }
+
+    label {
+        width: 135px !important
+    }
+
+    .form-control {
+        width       : 250px !important;
+        margin-right: 15px;
+    }
+
+    .ChapterSelect,
+    .EpisodeSelect,
+    .DateSelect,
+    .react-date-picker__calendar-button,
+    .react-date-picker__clear-button {
+        display   : inline-block;
+        background: url(@Sprites) -110px -195px;
+        width     : 25px;
+        height    : 25px;
+        border    : none;
+        position  : relative;
+        top       : 5px;
+        left      : 5px;
+
+        &:hover {
+            background-position-y: -219px;
+        }
+    }
+
+    .react-date-picker__calendar-button,
+    .react-date-picker__clear-button {
+        left: 0;
+        top : 1px;
+
+        &:active,
+        &:focus {
+            border: none;
+        }
+
+    }
+
+    .react-date-picker__calendar-button {
+        background-position-x: -135px;
+    }
+
+    .react-date-picker__clear-button {
+        /* Going to hide this button */
+        display              : none;
+        background-position-x: -160px;
+    }
+
+    .react-date-picker__button>svg {
+        display: none;
+    }
+
+    .react-date-picker__wrapper {
+        border: none;
+    }
+
+}
+
+#txtShareUrl {
+    flex-grow: 1;
+}
